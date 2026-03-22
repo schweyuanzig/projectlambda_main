@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Lambda</title>
+    <title>Lambda Preview</title>
     <style>
       * {
         box-sizing: border-box;
@@ -486,7 +486,8 @@
             <div class="title-wrap">
               <h1 class="title">Lambda</h1>
               <div class="subtitle">
-                projectlambda.net (simply as Lambda) is a dynamic script hub designed to enhance your gaming performance.
+                Loader ve Features aynı HTML içinde pencere olarak açılır. Ana ekranda sadece başlık,
+                açıklama, butonlar ve tek satır istatistik alanı görünür.
               </div>
             </div>
           </div>
@@ -516,7 +517,7 @@
           </div>
         </section>
 
-        <div class="footer-note"> &copy; projectlambda.net </div>
+        <div class="footer-note">projectlambda.net preview</div>
       </div>
 
       <div class="modal-overlay" id="loaderModal">
@@ -527,10 +528,10 @@
           </div>
           <div class="modal-body">
             <div class="panel-label">Loader Code</div>
-            <div class="code-display"><code id="loaderCode">loadstring(game:HttpGet("https://projectlambda.net/LambdaLoader.lua"))()</code></div>
+            <div class="code-display"><code id="loaderCode">loadstring(game:HttpGet("https://projectlambda.net/Loader.lua"))()</code></div>
             <div class="panel-meta">
-              <div class="helper-text" id="loaderStatus"></div>
-              <button class="copy-btn" id="copyLoaderButton" type="button">COPY</button>
+              <div class="helper-text" id="loaderStatus">Loader açıldığında kod otomatik kopyalanır.</div>
+              <button class="copy-btn" id="copyLoaderButton" type="button">Kopyala</button>
               <div class="copy-badge" id="copyBadge">Ready</div>
             </div>
           </div>
@@ -548,7 +549,7 @@
             <div class="feature-layout">
               <div class="tabs">
                 <button class="tab-btn active" type="button" data-tab="arsenal">Arsenal</button>
-                <button class="tab-btn" type="button" data-tab="mega">M.E.G</button>
+                <button class="tab-btn" type="button" data-tab="mega">Mega</button>
               </div>
 
               <div class="feature-panels">
@@ -556,39 +557,28 @@
                   <div class="feature-card">
                     <h2 class="feature-title">Arsenal</h2>
                     <p class="feature-text">
-                      Lambda's Arsenal part
+                      Arsenal sekmesine basınca aynı pencere içinde içerik anında değişir.
+                      Yeni sayfa açılmaz, her şey tek HTML içinde kalır.
                     </p>
                     <ul class="feature-list">
-                      <li>OP Aimbot</li>
-                      <li>Team Check</li>
-                      <li>No Recoil & No Spread</li>
-                      <li>ESP</li>
-                      <li>Tracers</li>
-                      <li>Streamproof</li>
-                      <li>More Customizable Visuals</li>
-                      <li>and more..!</li>
-                  
+                      <li>Hızlı sekme geçişi</li>
+                      <li>Tek pencere içi içerik değişimi</li>
+                      <li>Koyu tema ile uyumlu görünüm</li>
                     </ul>
                   </div>
                 </div>
 
                 <div class="tab-panel" id="tab-mega">
                   <div class="feature-card">
-                    <h2 class="feature-title">M.E.G</h2>
+                    <h2 class="feature-title">Mega</h2>
                     <p class="feature-text">
-                        Lambda's M.E.G part
+                      Mega sekmesi seçildiğinde aynı pencere içinde farklı panel gösterilir.
+                      Kullanıcı ana sayfadan ayrılmaz.
                     </p>
                     <ul class="feature-list">
-                      <li>Entity Notifier</li>
-                      <li>Chat Enabler</li>
-                      <li>Anti-AFK</li>
-                      <li>TP Hacks</li>
-                      <li>Unlock Gamepasses</li>
-                      <li>ESP</li>
-                      <li>Noclip</li>
-                      <li>Break Zoom</li>
-                      <li>Movement Hacks</li>
-                      <li>and more..!</li>
+                      <li>Ayrı başlık ve açıklama alanı</li>
+                      <li>Temiz ve kompakt bilgi düzeni</li>
+                      <li>Tek tıkla panel geçişi</li>
                     </ul>
                   </div>
                 </div>
@@ -628,10 +618,10 @@
       async function copyLoaderCode() {
         try {
           await navigator.clipboard.writeText(loaderCode);
-          loaderStatus.textContent = 'Copied.';
+          loaderStatus.textContent = 'Kod kopyalandı.';
           copyBadge.textContent = 'Copied';
         } catch (error) {
-          loaderStatus.textContent = 'Copy failed.';
+          loaderStatus.textContent = 'Kopyalama başarısız oldu.';
           copyBadge.textContent = 'Failed';
         }
       }
